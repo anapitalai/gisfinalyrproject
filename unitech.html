@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Student Project</title>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css' rel='stylesheet' />
+  <script type="text/javascript"src="leaflet-search/src/leaflet-search.js"></script>
+  <link rel="stylesheet" type="text/css" href="leaflet-search/src/leaflet-search.css">
+  
+  <script type="text/javascript" src="geojson/uniroads3857.geojson"></script>
+   <script type="text/javascript" src="geojson/Land_Parcels.geojson"></script>
+  <script type="text/javascript" src="geojson/Uni_Departmental_buildings.geojson"></script>
+  <script type="text/javascript" src="geojson/unibounds.geojson"></script>
+  <script type="text/javascript" src="geojson/footpath_1.geojson"></script>
+  <script type="text/javascript" src="geojson/footpath_2.geojson"></script>
+  <script type="text/javascript" src="geojson/Uni_Departmental_buildings.geojson"></script>
+  <script type="text/javascript" src="geojson/staffResidences.geojson"></script>
+  <script type="text/javascript" src="geojson/dorms.geojson"></script>
+  <script type="text/javascript" src="geojson/lectureTheatres.geojson"></script>
+  <script type="text/javascript" src="geojson/otherBuildings.geojson"></script>
+   <script type="text/javascript" src="geojson/carparks.geojson"></script>
+  <script type="text/javascript" src="geojson/admin.geojson"></script>
+  <script type="text/javascript" src="geojson/uniLibrary.geojson"></script>
+    <script type="text/javascript" src="geojson/missionCentre.geojson"></script>
+    <script type="text/javascript" src="geojson/field.geojson"></script>
+<script type="text/javascript" src="geojson/boundary.geojson"></script>
+  <style>
+    body { margin:0; padding:0; }
+    .map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+<div id='map-four' class='map'> </div>
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoiYW5hcGl0YWxhaSIsImEiOiI1MzQ1MWViYmRiZjg4ZTA2YWI1ZjllNjg3NjkzYjZkNyJ9.7RJTLGvA02y-8SZZBGqbyQ';
+
+
+var map = L.mapbox.map('map-four', 'mapbox.streets', {
+    scrollWheelZoom: true
+}).setView([-6.67028, 146.99512], 16);
+
+//get  color fx
+function getColor(d) {
+    return d === 'dorms' ? '#800026' :
+           d === 'housing'  ? '#BD0026' :
+          // d > 200  ? '#E31A1C' :
+           //d > 100  ? '#FC4E2A' :
+           //d > 50   ? '#FD8D3C' :
+           //d > 20   ? '#FEB24C' :
+           //d > 10   ? '#FED976' :
+                      '#FFEDA0';
+}
+//
+function style(feature) {
+    return {
+        fillColor: getColor(feature.properties.Building_n),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+}
+
+L.geoJson(depts, {style: style}).addTo(map);
+
+
+
+
+//Colors for departments
+function colorStyles(feature){
+ return {fillColor:getShapeColor,
+         color:'white',
+         weight:3,
+        opacity:1,
+        dashArray:3,
+        fillOpacity:0.7
+
+}
+}
+
+//Colors for dorms
+//function colorStylesDorms(feature){
+ //return {fillColor:'cyan',
+   //      color:'white',
+    //     weight:3,
+      //  opacity:1,
+       // dashArray:3,
+        //fillOpacity:0.7
+
+//}
+//}
+//Colors for residence
+//function colorStylesRes(){
+ //return {fillColor:'yellow',
+   //      color:'white',
+     //    weight:3,
+     //   opacity:1,
+    //    text:'tested',
+     //   dashArray:3,
+     //   fillOpacity:0.7
+
+//}
+//}
+
+
+
+//var roadLayer=L.geoJson(rots).addTo(map);
+//var uniBuidings = L.geoJson(depts,{style:colorStyles}).addTo(map);
+//var uniBounds = L.geoJson(bounds).addTo(map);
+//var foopath = L.geoJson(fp1).addTo(map);
+//var foopath2 = L.geoJson(fp2).addTo(map);
+var p = L.geoJson(parcels).addTo(map);
+var dormitories = L.geoJson(dormot,{style:colorStyles}).addTo(map);
+//var ltheatres = L.geoJson(lect).addTo(map);
+//var otherBuildings = L.geoJson(obuilds).addTo(map);
+//var uadmin = L.geoJson(adm).addTo(map);
+//var parks = L.geoJson(cparks).addTo(map);
+//var libs = L.geoJson(lib).addTo(map);
+//var mcenter = L.geoJson(mc).addTo(map);
+//var ufield = L.geoJson(fields).addTo(map);
+//var Bound= L.geoJson(bounds).addTo(map);
+
+
+var point = [-6.67028, 146.99512];
+L.marker(point).addTo(map)
+    .bindPopup("<b>This is th PNG University of Technology</b><br />Lae,Morobe Province").openPopup();
+
+L.marker([-6.6736, 146.99322]).addTo(map)
+    .bindPopup('<b>Sandover Building</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/sandover.jpg"></div>').openPopup();
+
+//marker for library
+    L.marker([-6.6736, 146.99322]).addTo(map)
+    .bindPopup('<b>Sandover Building</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/sandover.jpg"></div>').openPopup();
+
+
+    var popup = L.popup();
+
+  function onMapClick(e) {
+    popup
+      .setLatLng(e.latlng)
+      .setContent("You clicked the map at " + e.latlng.toString())
+      .openOn(map);}
+      map.on('click', onMapClick);
+
+</script>
+</body>
+</html>

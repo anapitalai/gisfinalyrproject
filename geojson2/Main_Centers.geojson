@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32755" } },
+"features": [
+{ "type": "Feature", "properties": { "OBJECTID": 1, "MID": "1", "Name": "Snack Bar", "Type": "Commercial Centre ", "Picture": null }, "geometry": { "type": "Point", "coordinates": [ 498972.91959999967, 9256589.2529, 0.0 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 2, "MID": "2", "Name": "Lae Main Market", "Type": "Commercial Centre ", "Picture": null }, "geometry": { "type": "Point", "coordinates": [ 499143.44049999956, 9255836.577199999, 0.0 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 3, "MID": "3", "Name": "Sir Ignatius Kilage Stadium", "Type": "Recreational", "Picture": null }, "geometry": { "type": "Point", "coordinates": [ 500708.70920000039, 9255432.9451, 0.0 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 4, "MID": "4", "Name": "Top Town", "Type": "Commercial Centre ", "Picture": null }, "geometry": { "type": "Point", "coordinates": [ 500158.114, 9256372.9658, 0.0 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 5, "MID": "5", "Name": "Malahang Industrial Centre", "Type": "Industrial Centre", "Picture": null }, "geometry": { "type": "Point", "coordinates": [ 503238.1711, 9258882.2387, 0.0 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 6, "MID": "6", "Name": "Papua New Guinea University of Technology", "Type": "Institution", "Picture": null }, "geometry": { "type": "Point", "coordinates": [ 499124.0064000003, 9262293.171, 0.0 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 7, "MID": "7", "Name": "Bumayong Market", "Type": "Market", "Picture": null }, "geometry": { "type": "Point", "coordinates": [ 501029.51269999985, 9265730.1344, 0.0 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 8, "MID": "8", "Name": "Balob Teachers College", "Type": "Institution", "Picture": null }, "geometry": { "type": "Point", "coordinates": [ 501864.2341, 9257100.907199999, 0.0 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 9, "MID": "9", "Name": "Morobe Provincial Administration", "Type": "Government", "Picture": null }, "geometry": { "type": "Point", "coordinates": [ 500063.59090000018, 9256070.5078, 0.0 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 10, "MID": "10", "Name": "Eriku", "Type": "Commercial Centre ", "Picture": null }, "geometry": { "type": "Point", "coordinates": [ 499255.52379999962, 9257789.9782, 0.0 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 11, "MID": "11", "Name": "Kamkumung", "Type": "Market", "Picture": null }, "geometry": { "type": "Point", "coordinates": [ 500144.43329999968, 9258936.8966, 0.0 ] } }
+]
+}

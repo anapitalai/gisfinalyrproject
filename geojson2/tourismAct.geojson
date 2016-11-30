@@ -1,0 +1,10 @@
+var tourAct={
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "OBJECTID": 1, "Id": 1, "AID": 1, "Name": "Morobe Provicial Agricultural Show", "Type": "Annual Event", "Address": null, "Phone_Fax": null, "Email": null, "Website": null, "Online_Booking": null, "Enquire": null, "Reservation": null, "Date": null, "Description": null, "Picture": null, "Latitude": "146°59'15.336\"E", "Longtitude": "6°43'21.67\"S " }, "geometry": { "type": "Point", "coordinates": [ 146.987589847080983, -6.722689830486869 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 2, "Id": 2, "AID": 2, "Name": "Ahi Festival", "Type": "Annual Event", "Address": null, "Phone_Fax": null, "Email": null, "Website": null, "Online_Booking": null, "Enquire": null, "Reservation": null, "Date": null, "Description": null, "Picture": null, "Latitude": "147°0'23.11\"E", "Longtitude": "6°44'9.695\"S" }, "geometry": { "type": "Point", "coordinates": [ 147.006412965371482, -6.73602087574223 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 3, "Id": 3, "AID": 3, "Name": "PNG Rugby League", "Type": "Monthly Event", "Address": null, "Phone_Fax": null, "Email": null, "Website": null, "Online_Booking": null, "Enquire": null, "Reservation": null, "Date": null, "Description": null, "Picture": null, "Latitude": "147°0'11.173\"E", "Longtitude": "6°44'10.692\"S" }, "geometry": { "type": "Point", "coordinates": [ 147.003094316531019, -6.736307731571274 ] } }
+]
+}

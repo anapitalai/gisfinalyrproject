@@ -1,0 +1,10 @@
+var lect={
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                                                                  
+"features": [
+{ "type": "Feature", "properties": { "Building_n": "Duncanson Hall (DH)", "Area_no": 7, "Usage": "Lecture Theatre", "Type": "Academic", "Street": "Toliman way" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 146.992525, -6.674095 ], [ 146.992525, -6.673765 ], [ 146.99279, -6.673765 ], [ 146.99279, -6.674095 ], [ 146.992525, -6.674095 ] ] ] } },
+{ "type": "Feature", "properties": { "Building_n": "Rose Kekedo building", "Area_no": 7, "Usage": "Lecture theatres (RKLT-1, RKLT-2 etc..; conference rooms", "Type": "Academic\/Conference", "Street": "Astrolabe Rd" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 146.993519, -6.674653 ], [ 146.993519, -6.674355 ], [ 146.993826, -6.674355 ], [ 146.993826, -6.674653 ], [ 146.993519, -6.674653 ] ] ] } },
+{ "type": "Feature", "properties": { "Building_n": "HAUS EROPA", "Area_no": 7, "Usage": "Lecture theatre ( HELT-1, HELT-2); stds computer lab; ICT office; DATEC", "Type": "Academic", "Street": "Astrolabe Rd" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 146.994419, -6.67377 ], [ 146.994419, -6.67389 ], [ 146.994408, -6.67389 ], [ 146.994408, -6.673882 ], [ 146.994303, -6.673931 ], [ 146.994303, -6.673961 ], [ 146.994313, -6.673961 ], [ 146.994313, -6.673973 ], [ 146.99411, -6.673973 ], [ 146.99411, -6.673961 ], [ 146.994115, -6.673961 ], [ 146.994115, -6.673935 ], [ 146.994011, -6.673883 ], [ 146.994011, -6.673887 ], [ 146.994001, -6.673887 ], [ 146.994001, -6.673773 ], [ 146.994011, -6.673773 ], [ 146.994011, -6.673785 ], [ 146.994115, -6.673725 ], [ 146.994115, -6.673701 ], [ 146.994106, -6.673701 ], [ 146.994106, -6.673689 ], [ 146.994311, -6.673689 ], [ 146.994311, -6.673701 ], [ 146.994303, -6.673701 ], [ 146.994303, -6.673731 ], [ 146.994303, -6.673731 ], [ 146.994408, -6.673778 ], [ 146.994408, -6.67377 ], [ 146.994419, -6.67377 ] ] ] } }
+]
+}
