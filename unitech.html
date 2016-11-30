@@ -9,7 +9,6 @@
   <link rel="stylesheet" type="text/css" href="leaflet-search/src/leaflet-search.css">
   
   <script type="text/javascript" src="geojson/uniroads3857.geojson"></script>
-   <script type="text/javascript" src="geojson/Land_Parcels.geojson"></script>
   <script type="text/javascript" src="geojson/Uni_Departmental_buildings.geojson"></script>
   <script type="text/javascript" src="geojson/unibounds.geojson"></script>
   <script type="text/javascript" src="geojson/footpath_1.geojson"></script>
@@ -40,37 +39,14 @@ var map = L.mapbox.map('map-four', 'mapbox.streets', {
     scrollWheelZoom: true
 }).setView([-6.67028, 146.99512], 16);
 
-//get  color fx
-function getColor(d) {
-    return d === 'dorms' ? '#800026' :
-           d === 'housing'  ? '#BD0026' :
-          // d > 200  ? '#E31A1C' :
-           //d > 100  ? '#FC4E2A' :
-           //d > 50   ? '#FD8D3C' :
-           //d > 20   ? '#FEB24C' :
-           //d > 10   ? '#FED976' :
-                      '#FFEDA0';
-}
-//
-function style(feature) {
-    return {
-        fillColor: getColor(feature.properties.Building_n),
-        weight: 2,
-        opacity: 1,
-        color: 'white',
-        dashArray: '3',
-        fillOpacity: 0.7
-    };
-}
-
-L.geoJson(depts, {style: style}).addTo(map);
-
-
-
+//var myLayer = L.mapbox.featureLayer().addTo(map);
+//myLayer.setGeoJSON(geojson);
+//uni roads
+//var uniroads= L.geoJson(roads).addTo(map);
 
 //Colors for departments
 function colorStyles(feature){
- return {fillColor:getShapeColor,
+ return {fillColor:'brown',
          color:'white',
          weight:3,
         opacity:1,
@@ -81,45 +57,182 @@ function colorStyles(feature){
 }
 
 //Colors for dorms
-//function colorStylesDorms(feature){
- //return {fillColor:'cyan',
-   //      color:'white',
-    //     weight:3,
-      //  opacity:1,
-       // dashArray:3,
-        //fillOpacity:0.7
+function colorStylesDorms(feature){
+ return {fillColor:'cyan',
+         color:'white',
+         weight:3,
+        opacity:1,
+        dashArray:3,
+        fillOpacity:0.7
 
-//}
-//}
+}
+}
 //Colors for residence
-//function colorStylesRes(){
- //return {fillColor:'yellow',
-   //      color:'white',
-     //    weight:3,
-     //   opacity:1,
-    //    text:'tested',
-     //   dashArray:3,
-     //   fillOpacity:0.7
+function colorStylesRes(feature){
+ return {fillColor:'yellow',
+         color:'white',
+         weight:3,
+        opacity:1,
+        dashArray:3,
+        fillOpacity:0.7
 
-//}
-//}
+}
+}
+
+//Colors for road
+function colorStylesRoad(feature){
+ return {fillColor:'grey',
+         color:'white',
+         weight:3,
+        opacity:1,
+        dashArray:3,
+        fillOpacity:0.7
+
+}
+}
+
+//Colors for Bounds
+function colorStylesBounds(feature){
+ return {fillColor:'red',
+         color:'red',
+         weight:3,
+        opacity:1,
+        dashArray:3,
+        fillOpacity:0.7
+
+}
+}
+
+//Colors for footpath
+function colorStylesFootpath1(feature){
+ return {fillColor:'black',
+         color:'white',
+         weight:3,
+        opacity:1,
+        dashArray:3,
+        fillOpacity:0.7
+
+}
+}
 
 
+//Colors for Footpath2
+function colorStylesFootpath2(feature){
+ return {fillColor:'black',
+         color:'white',
+         weight:3,
+        opacity:1,
+        dashArray:3,
+        fillOpacity:0.7
 
-//var roadLayer=L.geoJson(rots).addTo(map);
-//var uniBuidings = L.geoJson(depts,{style:colorStyles}).addTo(map);
-//var uniBounds = L.geoJson(bounds).addTo(map);
-//var foopath = L.geoJson(fp1).addTo(map);
-//var foopath2 = L.geoJson(fp2).addTo(map);
-var p = L.geoJson(parcels).addTo(map);
-var dormitories = L.geoJson(dormot,{style:colorStyles}).addTo(map);
-//var ltheatres = L.geoJson(lect).addTo(map);
-//var otherBuildings = L.geoJson(obuilds).addTo(map);
-//var uadmin = L.geoJson(adm).addTo(map);
-//var parks = L.geoJson(cparks).addTo(map);
-//var libs = L.geoJson(lib).addTo(map);
-//var mcenter = L.geoJson(mc).addTo(map);
-//var ufield = L.geoJson(fields).addTo(map);
+}
+}
+
+//Colors for Lecture theatres
+function colorStylesLtheatres(feature){
+ return {fillColor:'orange',
+         color:'white',
+         weight:3,
+        opacity:1,
+        dashArray:3,
+        fillOpacity:0.7
+
+}
+}
+
+//Colors for Other Buidlings
+function colorStylesOtherBuildings(feature){
+ return {fillColor:'magenta',
+         color:'white',
+         weight:3,
+        opacity:1,
+        dashArray:3,
+        fillOpacity:0.7
+
+}
+}
+
+//Colors for Admin
+function colorStylesAdmin(feature){
+ return {fillColor:'red',
+         color:'white',
+         weight:3,
+        opacity:1,
+        dashArray:3,
+        fillOpacity:0.7
+
+}
+}
+
+//Colors for Carparks
+function colorStylesParks(feature){
+ return {fillColor:'dark brown',
+         color:'white',
+         weight:3,
+        opacity:1,
+        dashArray:3,
+        fillOpacity:0.7
+
+}
+}
+
+//Colors for Library
+function colorStylesLib(feature){
+ return {fillColor:'dark blue',
+         color:'white',
+         weight:3,
+        opacity:1,
+        dashArray:3,
+        fillOpacity:0.7
+
+}
+}
+
+//Colors for mission centre
+function colorStylesMcentre(feature){
+ return {fillColor:'pink',
+         color:'white',
+         weight:3,
+        opacity:1,
+        dashArray:3,
+        fillOpacity:0.7
+
+}
+}
+
+//Colors for Field
+function colorStylesField(feature){
+ return {fillColor:'green',
+         color:'white',
+         weight:3,
+        opacity:1,
+        dashArray:3,
+        fillOpacity:0.7
+
+}
+}
+//legend code
+var lengend = L.control({position:'bottomright'});
+lengend.onAdd=function(map){
+  var div = L.DomUtil.create('div','legend');
+  var label=['Population over 100','Population over 200','Population over 10000'];
+}
+
+
+var roadLayer=L.geoJson(rots,{style:colorStylesRoad}).addTo(map);
+var uniBuidings = L.geoJson(depts,{style:colorStyles}).addTo(map);
+var uniBounds = L.geoJson(bounds,{style:colorStylesBounds}).addTo(map);
+var foopath = L.geoJson(fp1,{style:colorStylesFootpath1}).addTo(map);
+var foopath2 = L.geoJson(fp2,{style:colorStylesFootpath2}).addTo(map);
+var staffRes = L.geoJson(staffRes,{style:colorStylesRes}).addTo(map);
+var dormitories = L.geoJson(dormot,{style:colorStylesDorms}).addTo(map);
+var ltheatres = L.geoJson(lect,{style:colorStylesLtheatres}).addTo(map);
+var otherBuildings = L.geoJson(obuilds,{style:colorStylesOtherBuildings}).addTo(map);
+var uadmin = L.geoJson(adm,{style:colorStylesAdmin}).addTo(map);
+var parks = L.geoJson(cparks,{style:colorStylesParks}).addTo(map);
+var libs = L.geoJson(lib,{style:colorStylesLib}).addTo(map);
+var mcenter = L.geoJson(mc,{style:colorStylesMcentre}).addTo(map);
+var ufield = L.geoJson(fields,{style:colorStylesField}).addTo(map);
 //var Bound= L.geoJson(bounds).addTo(map);
 
 
@@ -130,9 +243,54 @@ L.marker(point).addTo(map)
 L.marker([-6.6736, 146.99322]).addTo(map)
     .bindPopup('<b>Sandover Building</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/sandover.jpg"></div>').openPopup();
 
-//marker for library
-    L.marker([-6.6736, 146.99322]).addTo(map)
-    .bindPopup('<b>Sandover Building</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/sandover.jpg"></div>').openPopup();
+L.marker([-6.673476, 146.991998]).addTo(map)
+    .bindPopup('<b>Administration</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/Admin.jpg"></div>').openPopup();
+
+L.marker([-6.674106, 146.99551]).addTo(map)
+    .bindPopup('<b>Philip Siaguru</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/Forestry.jpg"></div>').openPopup();
+
+L.marker([-6.67417, 146.992239]).addTo(map)
+    .bindPopup('<b>Architecture & Business Studies</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/Archi&BS.jpg"></div>').openPopup();
+
+L.marker([-6.673765, 146.992525]).addTo(map)
+    .bindPopup('<b>Duncanson Hall</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/DH.jpg"></div>').openPopup();
+
+L.marker([-6.75205, 146.992719]).addTo(map)
+    .bindPopup('<b>Mechanical Engineering</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/MechDept.jpg"></div>').openPopup();
+
+L.marker([-6.67389, 146.994408]).addTo(map)
+    .bindPopup('<b>HAUS EROPA</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/haus eropa.jpg"></div>').openPopup();
+    
+
+L.marker([-6.674355, 146.993826]).addTo(map)
+    .bindPopup('<b>Rose Kekedo</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/RKLT.jpg"></div>').openPopup();
+
+L.marker([-6.675286, 146.993859]).addTo(map)
+    .bindPopup('<b>Mining Engineering</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/mining.jpg"></div>').openPopup();
+
+L.marker([-6.672771, 146.995946]).addTo(map)
+    .bindPopup('<b>Unitech Students Mess</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/mess.jpg"></div>').openPopup();
+
+L.marker([-6.674443, 146.99325]).addTo(map)
+    .bindPopup('<b>ToLOLO Building</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/civil.jpg"></div>').openPopup();
+
+L.marker([-6.67466, 146.992833]).addTo(map)
+    .bindPopup('<b>Electrical Engineering</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/electrical.jpg"></div>').openPopup();
+
+L.marker([-6.674271, 146.994296]).addTo(map)
+    .bindPopup('<b>Applied Science</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/appScience.jpg"></div>').openPopup();
+
+L.marker([-6.673009, 146.995723]).addTo(map)
+    .bindPopup('<b>Unitech Books Shop</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/Bookshop.jpg"></div>').openPopup();
+
+L.marker([-6.673564, 146.995214]).addTo(map)
+    .bindPopup('<b>NATSL</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/NATSL.jpg"></div>').openPopup();
+
+L.marker([-6.672861, 146.99344]).addTo(map)
+    .bindPopup('<b>Haus Kofi</b><br />PNG University of Technology."<div><img style = "width:100%" src="images/khaus.jpg"></div>').openPopup();
+
+L.marker([-6.674324, 146.99226]).addTo(map)
+    .bindPopup('<b></b><br />Maths & Computer Science."<div><img style = "width:100%" src="images/Maths&comSci.jpg"></div>').openPopup();
 
 
     var popup = L.popup();
